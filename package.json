@@ -1,0 +1,18 @@
+{
+  "name": "ratelimitingsystem",
+  "version": "1.0.0",
+  "description": "A rate limiting system having rate limit for each client, to have fair access to resources for all clients",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kunal kadian",
+  "license": "ISC",
+  "dependencies": {
+    "body-parse": "^0.1.0",
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.4"
+  }
+}

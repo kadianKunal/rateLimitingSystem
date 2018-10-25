@@ -1,0 +1,106 @@
+
+<body>
+
+<script>
+
+var server=<%- JSON.stringify(server) %>;
+var users=<%- JSON.stringify(users) %>;
+
+document.write("<div class='dash'><form action='/server/update' method='post'><h2>Server</h2><table class='tab' cellspacing=5 cellpadding=5>");
+var count= 0;
+for(i in server){
+	count++;
+	if(count<=4){
+		document.write("<tr class:'rows'><td class='props'>"+i+"</td><td class='vals'><input type='text' class='server' name="+i+" value="+server[i]+"></input></td></tr>");
+	}
+	else{
+		document.write("<tr class:'rows'><td class='props'>"+i+"</td><td class='vals'>"+server[i]+"</td></tr>");
+	}
+  };
+
+document.write("</table><input type='submit' value='Update'/></form></div>");
+
+
+document.write("<center><div class='dash' id='userDiv'><h2>Users</h2><div style= 'height:60%; overflow:scroll'><table class='tab' cellspacing=5 cellpadding=5 id='users'>");
+
+
+document.write("<tr><th class='uData'>Name</th><th class='uData'>Priority</th><th class='uData'>mLimit</th><th class='uData'>rpm</th><th class='uData'>hLimit</th><th class='uData'>rph</th><th class='uData'>dLimit</th><th class='uData'>rpd</th><th class='uData'>isBlocked</th></tr>");
+
+for(i in users){
+document.write("<tr><td class='uData'>"+users[i].name+"</td><td class='uData'>"+users[i].priority+"</td><td class='uData'>"+users[i].mLimit+"</td><td class='uData'>"+users[i].rpm+"</td><td class='uData'>"+users[i].hLimit+"</td><td class='uData'>"+users[i].rph+"</td><td class='uData'>"+users[i].dLimit+"</td><td class='uData'>"+users[i].rpd+"</td><td class='uData'>"+users[i].isBlocked+"</td></tr>");
+    
+  };
+
+document.write("</table></div>");
+
+</script>
+
+<form id="userAdd" action="/user/add" method="post">
+
+<input type="text" class="field" name="name" placeholder="Name" required></input>
+<input type="number" class="field" name="priority" placeholder="Priority" required></input>
+<input type="number" class="field" name="mLimit" placeholder="Minute Limit" required></input>
+<input type="number" class="field" name="hLimit" placeholder="Hour Limit" required></input>
+<input type="number" class="field" name="dLimit" placeholder="Day Limit" required></input>
+<input type="submit" value="Add User"></input>
+</form>
+
+<div class="clearFloat"></div>
+
+<form id="userBlock" action="/user/block" method="post">
+	<input type="text" class="field" name="name" placeholder="Name" required></input>
+	<input type="submit" value="Block/ Unblock"></input>
+</form>
+
+</center></div>
+
+<div class="clearFloat"></div>
+
+
+<style>
+.dash{
+	float:left;
+	text-align:center
+}
+
+#userDiv{
+	margin-left:8%
+}
+
+#users{
+	text-align:center
+}
+
+.rows{
+	padding:15px
+}
+
+.clearFloat{
+	clear:both
+}
+
+#userAdd{
+	margin-top:4%
+}
+#userBlock{
+	margin-top:4%
+}
+
+.server{
+	width:50%;
+}
+
+.field{
+	width:10%;
+	padding-left:2px
+}
+
+input{
+	float:left;
+	margin-left:3px;
+}
+
+
+</style>
+
+</body>

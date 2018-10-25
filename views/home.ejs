@@ -1,0 +1,69 @@
+<html>
+  <head>
+   <!-- <link rel="stylesheet" href="home.css"></link> -->
+  </head>
+<body>
+
+ 
+
+<script>
+  var imgs= [
+      "https://www.planwallpaper.com/static/images/3865967-wallpaper-full-hd_XNgM7er.jpg",
+      "https://i.pinimg.com/originals/00/3c/8b/003c8b823287c80ac3a9a3ca857362a4.jpg",
+      "https://i.ytimg.com/vi/worGnwj8rwg/maxresdefault.jpg",
+      "http://www.wallpapereast.com/static/images/Logo-Batman-Wallpaper-HD-Download.jpg",
+      "http://ihaveapc.com/wp-content/uploads/2012/05/New-Stunning-HD-Wallpapers_082.jpg",
+      "http://diarioveaonline.com/wp-content/uploads/2018/06/cool-high-resolution-hd-wallpapers-for-desktop-31.jpg"
+    ];
+
+    function getImg(n){
+      return imgs[n];
+    };
+
+    function redirect(url){
+      location.href=url;
+    };
+</script>
+
+<center>
+
+    <img src="" id= "img" ><br>
+
+    <script>
+      var img=document.getElementById("img");
+      img.src=imgs[<%= i %>];
+    </script>
+
+
+  <!-- <button onclick="change()">click</button> -->
+  <!--  <button onclick=redirect("/validate/<%= name %>")>Previous</button>
+   <button onclick=redirect("/validate/<%= name %>")>Next</button> -->
+
+   <form action="/validate/<%= name %>" method="get" class="form-btn">
+      <input type="text" value="-1" name="dest" class="inp"></input>
+      <input type="submit" value="Previous" class="btn"></input>
+   </form>
+
+   <form action="/validate/<%= name %>" method="get" class="form-btn">
+      <input type="text" value="1" name="dest" class="inp"></input>
+      <input type="submit" value="Next" class="btn"></input>
+   </form>
+
+
+</center>
+
+
+<style>
+body{background-color:#1d2021;margin:5% auto;text-align:center}
+img{width:80%;height:60%;box-shadow:-4px -4px 10px black}
+.form-btn{display:inline-block;margin-top:5%;}
+.inp{width:0px;visibility:hidden;}
+.btn{outline:0px;border:0px;width:100px;height:30px;text-align:center;box-shadow:4px 4px 8px black}
+.btn:hover{box-shadow:1px 1px 2px black}
+
+
+</style>
+
+</body>
+
+</html>
