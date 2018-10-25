@@ -60,13 +60,10 @@ Currently it is implemented on a dummy image gallery website.
 			, 
 ### Route details:- 
 	
-	"/validate/:name" - One should start from here. It performs rate limiting and                      redirects or blocks clients accordingly.
-	"/view/:name/home" - Displays application specific response to permitted users.                     (Here it displays images on a dummy image gallery website)
-	"/admin/home" - Provides interface for admin to monitor and update server and                  clients parameters. eg. blocking/unblocking a client, changing                 servers hLimit, adding a new client
+	"/validate/:name" - One should start from here. It performs rate limiting and redirects or blocks clients accordingly.
+	"/view/:name/home" - Displays application specific response to permitted users. (Here it displays images on a dummy image gallery website)
+	"/admin/home" - Provides interface for admin to monitor and update server and clients parameters. eg. blocking/unblocking a client, changing servers hLimit, adding a new client
 	"/user/add" -   called internally by admin page. Adds a new client to database.
 	"/user/block" - called internally by admin page. Blocks a user.
 	"/server/update" - called internally by admin page. Updates server details.
-	
-			
-
   
